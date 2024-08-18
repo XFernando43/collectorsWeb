@@ -1,0 +1,114 @@
+<!-- <div class=" flex flex-col gap-8 p-3 rounded-lg shadow-2xl">
+
+  <div class=" flex flex-row justify-between">
+    <button mat-button
+      class="flex items-center border-1 border-blue-400 px-2 py-1 rounded-lg text-blue-600 hover:bg-blue-200    focus:outline-none focus:ring-2 focus:ring-blue-500">
+      <mat-icon class="mr-2">clear</mat-icon>
+      Clear
+    </button>
+    <div class="relative flex items-center">
+      <mat-icon class="absolute left-3 text-gray-400">search</mat-icon>
+      <input type="password" placeholder="search keyword"
+        class="pl-10 py-1 text-sm border-2 rounded-md border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500">
+    </div>
+  </div>
+
+  <table class="min-w-full">
+    <thead class="border-y-1 border-slate-300 text-sm font-semibold text-black tracking-wider">
+      <th class="px-6 py-3 ">Nro Solicitud</th>
+      <th class="px-6 py-3">Nombre</th>
+      <th class="px-6 py-3">Apellido</th>
+      <th class="px-6 py-3">Doc. identidad</th>
+      <th class="px-6 py-3">Status</th>
+      <th class="px-6 py-3">Fecha de Cobranza</th>
+    </thead>
+    <tbody class="text-center text-gray-900  border-y-1 border-black">
+      <tr class="hover:bg-slate-100" *ngFor="let item of deudores">
+        <td class="px-6 py-4 border-y-1 border-slate-300">{{item.nroSolicitud}}</td>
+        <td class="px-6 py-4 border-y-1 border-slate-300">{{item.nombre}}</td>
+        <td class="px-6 py-4 border-y-1 border-slate-300">{{item.apellido}}</td>
+        <td class="px-6 py-4 border-y-1 border-slate-300">{{item.docIdentidad}}</td>
+        <td class="px-6 py-4 border-y-1 border-slate-300">{{item.status}}</td>
+        <td class="px-6 py-4 border-y-1 border-slate-300">{{item.fechaCobranza}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+ -->
+
+
+
+ <div class="flex flex-col gap-8 p-3 rounded-lg shadow-2xl">
+  <div class="flex flex-row justify-between">
+    <button class="flex items-center border-1 border-blue-400 px-2 py-1 rounded-lg text-blue-600 hover:bg-blue-200 focus:outline-none focus:ring-2 focus:ring-blue-500">
+      Clear
+    </button>
+    <div class="relative flex items-center">
+      <input type="text" placeholder="search keyword"
+        class="pl-10 py-1 text-sm border-2 rounded-md border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500">
+    </div>
+  </div>
+
+  <table class="min-w-full">
+    <thead class="border-y-1 border-slate-300 text-sm font-semibold text-black tracking-wider">
+      <tr>
+        <th class="px-6 py-3">Nro Solicitud</th>
+        <th class="px-6 py-3">Nombre</th>
+        <th class="px-6 py-3">Apellido</th>
+        <th class="px-6 py-3">Doc. identidad</th>
+        <th class="px-6 py-3">Status</th>
+        <th class="px-6 py-3">Fecha de Cobranza</th>
+      </tr>
+    </thead>
+    <tbody class="text-center text-gray-900 border-y-1 border-black">
+      <tr class="hover:bg-slate-100" *ngFor="let item of paginatedDeudores">
+        <td class="px-6 py-4 border-y-1 border-slate-300">{{item.nroSolicitud}}</td>
+        <td class="px-6 py-4 border-y-1 border-slate-300">{{item.nombre}}</td>
+        <td class="px-6 py-4 border-y-1 border-slate-300">{{item.apellido}}</td>
+        <td class="px-6 py-4 border-y-1 border-slate-300">{{item.docIdentidad}}</td>
+        <td class="px-6 py-4 border-y-1 border-slate-300">{{item.status}}</td>
+        <td class="px-6 py-4 border-y-1 border-slate-300">{{item.fechaCobranza}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="flex justify-between items-center mt-4">
+    <button (click)="previousPage()" [disabled]="currentPage === 0"
+      class="px-4 py-2 bg-blue-500 text-white rounded disabled:opacity-50">Anterior</button>
+    <span>Page {{currentPage + 1}} of {{totalPages}}</span>
+    <button (click)="nextPage()" [disabled]="currentPage + 1 >= totalPages"
+      class="px-4 py-2 bg-blue-500 text-white rounded disabled:opacity-50">Siguiente</button>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- <tr v-for="feature in features" :key="feature.id" class="font-semibold border-b-4 hover:bg-green-200"> -->
+        <!-- <td class="px-6 border-r-4 py-4">{{ feature.identifier }}</td>
+        <td class="px-6 border-r-4 py-4">{{ feature.title }}</td>
+        <td class="px-6 border-r-4 py-4">{{ feature.place }}</td>
+        <td class="px-6 border-r-4 py-4">{{ feature.mag }}</td>
+        <td class="px-6 border-r-4 py-4">
+          {{ feature.longitude }} , {{ feature.latitude }}
+        </td>
+        <td class="px-6 border-r-4 py-4">{{ getTsunamiText(feature.id) }}</td>
+        <td class="px-6 border-r-4 py-4 flex flex-row items-center justify-between gap-2"> -->
+
+          <!-- <a :href="feature.url" target="_blank"
+            class="bg-red-400 p-3 rounded-lg text-white hover:underline mb-2 sm:mb-0">Url</a> -->
+          <!-- <RouterLink :to="'/feature/' + feature.id" class="inline-block"> -->
+            <!-- <button class="bg-green-950 text-white p-2 rounded-lg"> Info </button> -->
+          <!-- </RouterLink> -->
+        <!-- </td> -->
+      <!-- </tr> -->
