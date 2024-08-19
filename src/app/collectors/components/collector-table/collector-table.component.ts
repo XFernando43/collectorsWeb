@@ -1,10 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import {MatIconModule} from '@angular/material/icon';
+import {MatTableModule} from '@angular/material/table';
 
 @Component({
   selector: 'app-collector-table',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,MatIconModule,MatTableModule],
   templateUrl: './collector-table.component.html',
   styleUrls: ['./collector-table.component.css']
 })
