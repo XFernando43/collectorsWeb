@@ -1,0 +1,29 @@
+@keyframes moverIzquierda {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-85%);
+    }
+  }
+  
+  @keyframes moverDerecha {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  
+  .moveLeft {
+    position: relative;
+    animation: moverIzquierda 1s ease-in-out forwards;
+  }
+  
+  .moveRight {
+    position: relative;
+    animation: moverDerecha 1s ease-in-out forwards;
+}
+  
+  

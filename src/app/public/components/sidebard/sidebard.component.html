@@ -1,12 +1,33 @@
-<section class="max-w-xl h-screen flex flex-col gap-4">
-    <div>
+<section class='sidebar-container max-w-xl h-screen flex flex-col gap-4 bg-white py-4 px-5' [ngClass]="moveLeftRight">
+    <button class="w-full">
+      <img src="https://globalgo.sis360.com.pe/img/TISI.png" class="max-w-36" />
+    </button>
   
-        
-        <img src="https://globalgo.sis360.com.pe/img/TISI.png" alt="">
-
+    <div class="flex flex-row gap-3 items-center">
+      <img src="https://globalgo.sis360.com.pe/img/Job.gif" class="max-w-8" />
+      <p class="font-semibold uppercase text-green-600">ADMIN. GLOBALGO</p>
     </div>
-    <div class="flex flex-col gap-2">
-
+  
+    <ul class="list-none flex flex-col gap-4">
+      <li (click)="navigateTo('lugares')" class="flex flex-row gap-2 uppercase font-light text-xs items-center">
+        <img src="../../../../assets/svgs/settings.svg" alt="" />
+        Deudores
+      </li>
+      <li (click)="navigateTo('lugares')" class="flex flex-row gap-2 uppercase font-light text-xs items-center">
+        <img src="../../../../assets/svgs/settings.svg" alt="" />
+        Lugares
+      </li>
+      <li (click)="navigateTo('lugares')" class="flex flex-row gap-2 uppercase font-light text-xs items-center">
+        <img src="../../../../assets/svgs/settings.svg" alt="" />
+        Rutas
+      </li>
+    </ul>
+  
+    <div class="text-right">
+      <button (click)="handleShow()">
+        <img src="../../../../assets/svgs/arrow_front.svg" alt="" />
+      </button>
     </div>
-
+  
 </section>
+  
