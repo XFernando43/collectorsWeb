@@ -242,14 +242,12 @@ const ELEMENT_DATA: PeriodicElement[] = [
 export class CollectorTableComponent implements AfterViewInit {
   displayedColumns: string[] = ['nroSolicitud','Nombre','Doc. identidad','Status','Fecha de Cobranza','acciones',];
   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
+   
   @ViewChild(MatPaginator) paginator!: MatPaginator;
-
   constructor(private router: Router) {}
-
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
   }
-
   navigateTo(route: string) {
     this.router.navigate([`/${route}`]);
   }
